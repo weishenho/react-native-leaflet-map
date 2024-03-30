@@ -1,0 +1,31 @@
+# react-native-leaflet-map
+
+A React Native component that provides Leaflet MapView using the WebView
+
+## Installation
+
+```sh
+npm install react-native-leaflet-map
+```
+
+## Usage
+
+```js
+import { LeafletMapView } from "react-native-leaflet-map";
+
+// ...
+
+<LeafletMapView color="tomato" />
+```
+
+## Contributing
+
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+## License
+
+MIT
+
+---
+
+Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)

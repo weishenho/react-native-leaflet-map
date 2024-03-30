@@ -1,0 +1,133 @@
+{
+  "name": "react-native-webview-leaflet2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@turf/area": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "leaflet": "^1.9.3",
+    "leaflet.markercluster": "^1.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "4.2.1",
+    "react-measure": "2.5.2"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development webpack serve",
+    "build": "webpack",
+    "postinstall": "patch-package",
+    "postbuild": "npm run distributeIOS",
+    "test": "node scripts/test.js",
+    "distributeAndroid": "cp ./dist/Leaflet.html ../android/src/main/assets/",
+    "distributeIOS": "cp ./dist/Leaflet.html ../src/html/ && npm run distributeAndroid"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "@svgr/webpack": "^5.5.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/leaflet": "^1.9.1",
+    "@types/leaflet.markercluster": "^1.5.1",
+    "@types/node": "^16.18.14",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-measure": "^2.0.8",
+    "babel-jest": "^29.5.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.3.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-webpack-plugin": "^3.1.1",
+    "html-inline-css-webpack-plugin": "^1.11.2",
+    "html-inline-script-webpack-plugin": "^3.2.1",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.3",
+    "jest-resolve": "^27.4.2",
+    "jest-watch-typeahead": "^1.0.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "react-refresh": "^0.14.0",
+    "react-refresh-typescript": "^2.0.9",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^4.9.5",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-leaflet|@react-leaflet)"
+    ],
+    "modulePaths": [],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "resetMocks": true
+  }
+}
