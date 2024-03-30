@@ -32,23 +32,24 @@ export default function App() {
         mapLayers={[
           {
             baseLayer: true,
-            url: 'https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png',
-            // attribution: attribution,
-            // bounds: ONEMAP_MAX_BOUNDS,
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             minNativeZoom: 11,
             maxNativeZoom: 18,
             minZoom: 11,
             maxZoom: 20,
+            // bounds: ONEMAP_MAX_BOUNDS,
           },
         ]}
         mapMarkers={
           selectedLocation?.coordinate
             ? [
                 {
-                  id: 'selected-location-marker',
-                  icon: 'https://www.kindpng.com/picc/m/117-1171223_placeholder-map-marker-position-pinpoint-white-map-marker.png',
-                  size: [40, 55],
-                  iconAnchor: [20, 55],
+                  id: 'location-marker',
+                  icon: 'https://cdn-icons-png.flaticon.com/64/2776/2776067.png',
+                  size: [64, 64],
+                  iconAnchor: [32, 64],
                   position: selectedLocation?.coordinate,
                 },
               ]
