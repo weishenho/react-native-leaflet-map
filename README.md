@@ -59,7 +59,7 @@ import LeafletMapView from 'react-native-leaflet-map';
 
 #### mapLayer Type
 
-```json
+```
 {
   url?: string;
   baseLayer?: boolean;
@@ -74,7 +74,7 @@ import LeafletMapView from 'react-native-leaflet-map';
 }
 ```
 
-#### Example with OpenStreetMap
+#### Example with [OpenStreetMap](https://www.openstreetmap.org)
 
 ```json
 {
@@ -86,8 +86,11 @@ import LeafletMapView from 'react-native-leaflet-map';
   "maxZoom": 20
 }
 ```
+##### Screenshot
+<img width="313" alt="openstreetmap" src="https://github.com/weishenho/react-native-leaflet-map/assets/15232303/e011729b-1951-4ff2-8a9b-30de571552f1">
 
-#### Example with Singapore's OneMap
+
+#### Example with Singapore's [OneMap](https://www.onemap.gov.sg/docs/maps/index.html)
 
 ```json
 {
@@ -99,6 +102,10 @@ import LeafletMapView from 'react-native-leaflet-map';
   "maxZoom": 20
 }
 ```
+##### Screenshot
+<img width="314" alt="onemap" src="https://github.com/weishenho/react-native-leaflet-map/assets/15232303/bb1f6eae-d6c2-4131-afb6-6ca928265b35">
+
+
 
 ## Acknowledgement & References
 
