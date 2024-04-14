@@ -105,6 +105,33 @@ import LeafletMapView from 'react-native-leaflet-map';
 ##### Screenshot
 <img width="314" alt="onemap" src="https://github.com/weishenho/react-native-leaflet-map/assets/15232303/bb1f6eae-d6c2-4131-afb6-6ca928265b35">
 
+## Marker Cluster
+```typescript
+mapClusterMarkers={{
+  mapMarkers: hawkersJSON.SrchResults.map((data) => {
+    const [lat, lng] = data.LatLng.split(',').map((d) => Number(d));
+    return {
+      id: data.LatLng,
+      icon: 'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
+      size: [40, 40],
+      iconAnchor: [20, 40],
+      position: {
+        lat: lat,
+        lng: lng,
+      },
+    } as MapMarker;
+  }),
+  maxClusterRadius: 100,
+  clusterIcon:
+    'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
+  clusterIconSize: [40, 40],
+  clusterIconAnchor: [40 / 2, 40],
+}}
+```
+
+#### Demo Video
+[![Markers Clustering Demo](https://img.youtube.com/vi/-hVGKoGNVY8/0.jpg)](http://www.youtube.com/watch?feature=player_embedded&v=-hVGKoGNVY8)
+
 
 
 ## Acknowledgement & References
