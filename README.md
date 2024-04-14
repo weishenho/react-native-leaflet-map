@@ -21,8 +21,6 @@ import LeafletMapView from 'react-native-leaflet-map';
       {
         baseLayer: true,
         url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         minNativeZoom: 11,
         maxNativeZoom: 18,
         minZoom: 11,
@@ -55,7 +53,52 @@ import LeafletMapView from 'react-native-leaflet-map';
 | mapMarkers        | optional | MapMarker array                 | An array of map markers                                                                                                                                                                                         |
 | mapCenterPosition | optional | {lat: [Lat], lng: [Lng]} object | The center position of the map. This coordinate will not be accurate if the map has been moved manually. However, calling the map's setMapCenterPosition function will cause the map to revert to this location |
 | onMessageReceived | required | function                        | This function receives messages in the form of a WebviewLeafletMessage object from the map                                                                                                                      |
-| zoom              | optional | number                          | Desired zoom int value of the map. Typically (1 to 22)                                                     
+| zoom              | optional | number                          | Desired zoom int value of the map. Typically (1 to 22)                                                                                                                                                          |
+
+## mapLayer Type and Example
+
+#### mapLayer Type
+
+```json
+{
+  url?: string;
+  baseLayer?: boolean;
+  baseLayerIsChecked?: boolean;
+  baseLayerName?: string;
+  bounds?: LatLngBoundsLiteral;
+  id?: string;
+  opacity?: number;
+  pane?: string;
+  subLayer?: string;
+  zIndex?: number;
+}
+```
+
+#### Example with OpenStreetMap
+
+```json
+{
+  "baseLayer": true,
+  "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  "minNativeZoom": 11,
+  "maxNativeZoom": 18,
+  "minZoom": 11,
+  "maxZoom": 20
+}
+```
+
+#### Example with Singapore's OneMap
+
+```json
+{
+  "baseLayer": true,
+  "url": "https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png",
+  "minNativeZoom": 11,
+  "maxNativeZoom": 18,
+  "minZoom": 11,
+  "maxZoom": 20
+}
+```
 
 ## Acknowledgement & References
 
