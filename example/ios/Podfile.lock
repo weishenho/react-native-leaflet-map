@@ -944,7 +944,7 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
-  - react-native-leaflet-map (0.2.1):
+  - react-native-leaflet-map (0.2.2):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1358,7 +1358,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 85583ef014ce53d731a98c66a0e24496f7a83066
   React-logger: 3eb80a977f0d9669468ef641a5e1fabbc50a09ec
   React-Mapbuffer: 84ea43c6c6232049135b1550b8c60b2faac19fab
-  react-native-leaflet-map: 48252a4b2977702af583d76962269e850584e987
+  react-native-leaflet-map: 023db0e77730ced880aea0bb8ca316c17effee9e
   react-native-webview: 9395e82c917d81407deb9b1fe53158dd6c8880ff
   React-nativeconfig: b4d4e9901d4cabb57be63053fd2aa6086eb3c85f
   React-NativeModulesApple: cd26e56d56350e123da0c1e3e4c76cb58a05e1ee
@@ -1381,8 +1381,8 @@ SPEC CHECKSUMS:
   React-utils: d16c1d2251c088ad817996621947d0ac8167b46c
   ReactCommon: 2aa35648354bd4c4665b9a5084a7d37097b89c10
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61
+  Yoga: 805bf71192903b20fc14babe48080582fee65a80
 
 PODFILE CHECKSUM: adab443055acf8d46c6a448411d979af47d7df3f
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2

@@ -6,11 +6,28 @@ import LeafletMapView, {
   LeafletWebViewEventTags,
   type LeafletWebViewEvent,
   type LatLngLiteral,
+  type MapMarker,
 } from 'react-native-leaflet-map';
+
+import hawkersJSON from './hawkers.json';
 
 type ISelectedLocation = {
   coordinate?: LatLngLiteral;
 };
+
+const markers = hawkersJSON.SrchResults.map((data) => {
+  const [lat, lng] = data.LatLng.split(',').map((d) => Number(d));
+  return {
+    id: data.LatLng,
+    icon: 'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
+    size: [40, 40],
+    iconAnchor: [20, 40],
+    position: {
+      lat: lat,
+      lng: lng,
+    },
+  } as MapMarker;
+});
 
 export default function App() {
   const [selectedLocation, setSelectedLocation] =
@@ -19,7 +36,7 @@ export default function App() {
   const onLeafletMessageReceivedHandler = (event: LeafletWebViewEvent) => {
     if (event.tag === LeafletWebViewEventTags.onMapClicked) {
       if (!event.location) return;
-
+      console.log({ selectedLocation });
       setSelectedLocation({
         coordinate: event.location,
       });
@@ -42,19 +59,14 @@ export default function App() {
             // bounds: ONEMAP_MAX_BOUNDS,
           },
         ]}
-        mapMarkers={
-          selectedLocation?.coordinate
-            ? [
-                {
-                  id: 'location-marker',
-                  icon: 'https://cdn-icons-png.flaticon.com/64/2776/2776067.png',
-                  size: [64, 64],
-                  iconAnchor: [32, 64],
-                  position: selectedLocation?.coordinate,
-                },
-              ]
-            : undefined
-        }
+        mapClusterMarkers={{
+          mapMarkers: markers,
+          maxClusterRadius: 100,
+          clusterIcon:
+            'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
+          clusterIconSize: [40, 40],
+          clusterIconAnchor: [40 / 2, 40],
+        }}
         onMessage={onLeafletMessageReceivedHandler}
         mapCenterPosition={{ lat: 1.358479, lng: 103.815201 }}
       />

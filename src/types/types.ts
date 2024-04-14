@@ -14,7 +14,19 @@ import type {
 import type { TileLayerProps } from 'react-leaflet';
 import type { LeafletWebViewEventTags, Shape } from '../constants';
 
-export type * from 'leaflet';
+export type {
+  CircleMarkerOptions,
+  CircleOptions,
+  LatLngBoundsExpression,
+  LatLngBoundsLiteral,
+  LatLngExpression,
+  LatLngLiteral,
+  PathOptions,
+  PointExpression,
+  PointTuple,
+  PolylineOptions,
+  MapOptions,
+} from 'leaflet';
 
 export type LeafletMapProps = {
   mapOptions?: MapOptions;
