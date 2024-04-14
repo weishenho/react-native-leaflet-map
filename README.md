@@ -27,7 +27,6 @@ import LeafletMapView from 'react-native-leaflet-map';
         maxNativeZoom: 18,
         minZoom: 11,
         maxZoom: 20,
-        // bounds: ONEMAP_MAX_BOUNDS,
       },
     ]}
     mapMarkers={[
@@ -47,6 +46,16 @@ import LeafletMapView from 'react-native-leaflet-map';
   />
 </View>;
 ```
+
+## Props
+
+| property          | required | type                            | purpose                                                                                                                                                                                                         |
+| ----------------- | -------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| mapLayers         | optional | MapLayer array                  | An array of map layers \*\*\* Current only suppport 1 layer                                                                                                                                                     |
+| mapMarkers        | optional | MapMarker array                 | An array of map markers                                                                                                                                                                                         |
+| mapCenterPosition | optional | {lat: [Lat], lng: [Lng]} object | The center position of the map. This coordinate will not be accurate if the map has been moved manually. However, calling the map's setMapCenterPosition function will cause the map to revert to this location |
+| onMessageReceived | required | function                        | This function receives messages in the form of a WebviewLeafletMessage object from the map                                                                                                                      |
+| zoom              | optional | number                          | Desired zoom int value of the map. Typically (1 to 22)                                                     
 
 ## Acknowledgement & References
 
