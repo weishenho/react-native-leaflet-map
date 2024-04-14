@@ -133,7 +133,6 @@ export const LeafletView = ({
       domStorageEnabled
       javaScriptEnabled
       startInLoadingState
-      androidHardwareAccelerationDisabled={false}
       containerStyle={styles.container}
     />
   );

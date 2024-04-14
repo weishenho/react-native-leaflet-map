@@ -72,7 +72,7 @@
     "react-fast-compare": "^3.2.2",
     "react-native": "0.73.0",
     "react-native-builder-bob": "^0.20.0",
-    "react-native-webview": "^13.8.4",
+    "react-native-webview": "13.8.2",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.4.3"

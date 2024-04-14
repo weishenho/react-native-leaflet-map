@@ -11076,7 +11076,7 @@ __metadata:
     react-fast-compare: ^3.2.2
     react-native: 0.73.0
     react-native-builder-bob: ^0.20.0
-    react-native-webview: ^13.8.4
+    react-native-webview: 13.8.2
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.4.3
@@ -11087,6 +11087,19 @@ __metadata:
     react-native-webview: "*"
   languageName: unknown
   linkType: soft
+
+"react-native-webview@npm:13.8.2":
+  version: 13.8.2
+  resolution: "react-native-webview@npm:13.8.2"
+  dependencies:
+    escape-string-regexp: 2.0.0
+    invariant: 2.2.4
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: ae58584e140e8b3acbc975960e0c5ede4c11c6bece3e5bc736ab165fffd9567bb97f9d6482d4b4579e39b291bb69e813209d1f176327ea17d0d363b2f43a0922
+  languageName: node
+  linkType: hard
 
 "react-native-webview@npm:^13.8.4":
   version: 13.8.4
