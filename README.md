@@ -55,12 +55,12 @@ import LeafletMapView from 'react-native-leaflet-map';
 | onMessageReceived | required | function                        | This function receives messages in the form of a WebviewLeafletMessage object from the map                                                                                                                      |
 | zoom              | optional | number                          | Desired zoom int value of the map. Typically (1 to 22)                                                                                                                                                          |
 
-## mapLayer Type and Example
+## Map Layer
 
-#### mapLayer Type
+#### mapLayer Prop Type
 
-```
-{
+```typescript
+type MapLayer = {
   url?: string;
   baseLayer?: boolean;
   baseLayerIsChecked?: boolean;
@@ -105,7 +105,46 @@ import LeafletMapView from 'react-native-leaflet-map';
 ##### Screenshot
 <img width="314" alt="onemap" src="https://github.com/weishenho/react-native-leaflet-map/assets/15232303/bb1f6eae-d6c2-4131-afb6-6ca928265b35">
 
-## Marker Cluster
+## Map Markers & Marker Cluster
+### For regular Map Markers without clustering, simply use the mapMarkers prop
+### mapClustermarkers Prop Type
+```typescript
+type MapClusterMarkers = {
+  mapMarkers: Array<MapMarker>;
+  maxClusterRadius?: number;
+  clusterIcon: string;
+  clusterIconAnchor?: PointTuple;
+  clusterIconSize?: PointTuple;
+  clusterCountStyle?: {
+    backgroundColor?: string; // Default: #880123
+    color?: string; // text color Default: #FFF
+    topPos?: number; // Absolute top position Default: -5
+    rightPos?: number; // Absolute right position Default: -5
+    width?: number; // Default: 20
+    height?: number; // Default: 20
+    borderRadius?: number; // Default: 9999
+  };
+};
+```
+### MapMarker Type
+```typescript
+type MapMarker = {
+  icon: string;
+  iconAnchor?: PointTuple;
+  id: string;
+  position: LatLngLiteral;
+  size?: PointTuple;
+  zIndexOffset?: number;
+  popup?: {
+    id: string;
+    content: string;
+    offset?: PointExpression;
+    className?: string;
+    defaultOpen?: boolean;
+  };
+};
+```
+### Example Usage
 ```typescript
 mapClusterMarkers={{
   mapMarkers: hawkersJSON.SrchResults.map((data) => {
@@ -126,6 +165,10 @@ mapClusterMarkers={{
     'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
   clusterIconSize: [40, 40],
   clusterIconAnchor: [40 / 2, 40],
+  clusterCountStyle: {
+    borderRadius: 3,
+    backgroundColor: '#001f55',
+  },
 }}
 ```
 
