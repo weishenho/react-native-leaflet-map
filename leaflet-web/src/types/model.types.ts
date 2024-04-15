@@ -90,7 +90,7 @@ const AnimationDirections = [
   'alternate-reverse',
 ] as const;
 
-export type AnimationDirection = typeof AnimationDirections[number];
+export type AnimationDirection = (typeof AnimationDirections)[number];
 export interface MapMarkerAnimation {
   type: string;
   duration?: number;
@@ -146,6 +146,13 @@ export interface MapClusterMarkersProps {
   clusterIcon: string;
   clusterIconAnchor?: PointTuple;
   clusterIconSize?: PointTuple;
+  backgroundColor?: string;
+  color?: string;
+  topPos?: number;
+  rightPos?: number;
+  width?: number;
+  height?: number;
+  borderRadius?: number;
 }
 
 export interface MapMarkersProps {

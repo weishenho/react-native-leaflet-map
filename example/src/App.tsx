@@ -56,7 +56,6 @@ export default function App() {
             maxNativeZoom: 18,
             minZoom: 11,
             maxZoom: 20,
-            // bounds: ONEMAP_MAX_BOUNDS,
           },
         ]}
         mapClusterMarkers={{
@@ -66,6 +65,9 @@ export default function App() {
             'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
           clusterIconSize: [40, 40],
           clusterIconAnchor: [40 / 2, 40],
+          width: 20,
+          height: 20,
+          borderRadius: 999,
         }}
         onMessage={onLeafletMessageReceivedHandler}
         mapCenterPosition={{ lat: 1.358479, lng: 103.815201 }}

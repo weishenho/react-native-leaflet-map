@@ -5,12 +5,19 @@ import MapMarker from './MapMarker';
 import MarkerClusterGroup from './MarkerClusterGroup';
 
 const spiderLegPolylineOptions = { weight: 2, color: '#E2231A', opacity: 1 };
-const createClusterCustomIcon = function (
+const createClusterCustomIcon = (
   cluster: MarkerCluster,
   icon: string,
   size: PointTuple = [24, 24],
-  iconAnchor: PointTuple = [12, 12]
-) {
+  iconAnchor: PointTuple = [12, 12],
+  backgroundColor = '#880123',
+  color = '#FFF',
+  topPos = -5,
+  rightPos = -5,
+  width = 20,
+  height = 20,
+  borderRadius = 9999
+) => {
   // const clusterCountStyleJSON = JSON.stringify({
   //   'background-color': '#880123',
   //   'color': '#fff',
@@ -25,13 +32,14 @@ const createClusterCustomIcon = function (
     html: `<div class='cluster-container'><img src='${icon}' style="width:${
       size[0]
     }px;height:${size[1]}px;"></img><div class='cluster-count'
-    style='background-color:${'#880123'};color:${'#fff'};top:${-5}px;right${-5}px;
+    style='background-color:${backgroundColor};color:${color};top:${topPos}px;right${rightPos}px;width:${width}px;height:${height}px;border-radius:${borderRadius}px
     '>${cluster.getChildCount()}</div></div>`,
     className: 'custom-marker-cluster',
     iconSize: size,
     iconAnchor: iconAnchor,
   });
 };
+
 export const MapClusterMarkers = (props: MapClusterMarkersProps) => {
   return (
     <LayerGroup>
@@ -46,7 +54,14 @@ export const MapClusterMarkers = (props: MapClusterMarkersProps) => {
             cluster,
             props.clusterIcon,
             props.clusterIconSize,
-            props.clusterIconAnchor
+            props.clusterIconAnchor,
+            props.backgroundColor,
+            props.color,
+            props.topPos,
+            props.rightPos,
+            props.width,
+            props.height,
+            props.borderRadius
           )
         }
       >
