@@ -6,28 +6,11 @@ import LeafletMapView, {
   LeafletWebViewEventTags,
   type LeafletWebViewEvent,
   type LatLngLiteral,
-  type MapMarker,
 } from 'react-native-leaflet-map';
-
-import hawkersJSON from './hawkers.json';
 
 type ISelectedLocation = {
   coordinate?: LatLngLiteral;
 };
-
-const markers = hawkersJSON.SrchResults.map((data) => {
-  const [lat, lng] = data.LatLng.split(',').map((d) => Number(d));
-  return {
-    id: data.LatLng,
-    icon: 'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
-    size: [40, 40],
-    iconAnchor: [20, 40],
-    position: {
-      lat: lat,
-      lng: lng,
-    },
-  } as MapMarker;
-});
 
 export default function App() {
   const [selectedLocation, setSelectedLocation] =
@@ -50,25 +33,24 @@ export default function App() {
           {
             baseLayer: true,
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            attribution:
-              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             minNativeZoom: 11,
             maxNativeZoom: 18,
             minZoom: 11,
             maxZoom: 20,
           },
         ]}
-        mapClusterMarkers={{
-          mapMarkers: markers,
-          maxClusterRadius: 100,
-          clusterIcon:
-            'https://cdn-icons-png.flaticon.com/128/5193/5193665.png',
-          clusterIconSize: [40, 40],
-          clusterIconAnchor: [40 / 2, 40],
-          width: 20,
-          height: 20,
-          borderRadius: 999,
-        }}
+        mapMarkers={[
+          {
+            id: 'location-marker',
+            icon: 'https://cdn-icons-png.flaticon.com/64/2776/2776067.png',
+            size: [64, 64],
+            iconAnchor: [32, 64],
+            position: {
+              lat: 1.305587412732045,
+              lng: 103.83318545292657,
+            },
+          },
+        ]}
         onMessage={onLeafletMessageReceivedHandler}
         mapCenterPosition={{ lat: 1.358479, lng: 103.815201 }}
       />

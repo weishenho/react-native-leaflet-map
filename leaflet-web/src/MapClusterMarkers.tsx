@@ -18,16 +18,6 @@ const createClusterCustomIcon = (
   height = 20,
   borderRadius = 9999
 ) => {
-  // const clusterCountStyleJSON = JSON.stringify({
-  //   'background-color': '#880123',
-  //   'color': '#fff',
-  //   'top': `${20}px`,
-  //   'right': `${20}px`,
-  // });
-  // const clusterCountInlineStyle = clusterCountStyleJSON
-  //   .substring(1, clusterCountStyleJSON.length - 1)
-  //   .replaceAll(',', ';');
-
   return divIcon({
     html: `<div class='cluster-container'><img src='${icon}' style="width:${
       size[0]
@@ -55,13 +45,13 @@ export const MapClusterMarkers = (props: MapClusterMarkersProps) => {
             props.clusterIcon,
             props.clusterIconSize,
             props.clusterIconAnchor,
-            props.backgroundColor,
-            props.color,
-            props.topPos,
-            props.rightPos,
-            props.width,
-            props.height,
-            props.borderRadius
+            props.clusterCountStyle.backgroundColor,
+            props.clusterCountStyle.color,
+            props.clusterCountStyle.topPos,
+            props.clusterCountStyle.rightPos,
+            props.clusterCountStyle.width,
+            props.clusterCountStyle.height,
+            props.clusterCountStyle.borderRadius
           )
         }
       >

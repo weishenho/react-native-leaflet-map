@@ -146,13 +146,15 @@ export interface MapClusterMarkersProps {
   clusterIcon: string;
   clusterIconAnchor?: PointTuple;
   clusterIconSize?: PointTuple;
-  backgroundColor?: string;
-  color?: string;
-  topPos?: number;
-  rightPos?: number;
-  width?: number;
-  height?: number;
-  borderRadius?: number;
+  clusterCountStyle?: {
+    backgroundColor?: string;
+    color?: string;
+    topPos?: number;
+    rightPos?: number;
+    width?: number;
+    height?: number;
+    borderRadius?: number;
+  };
 }
 
 export interface MapMarkersProps {
