@@ -1,5 +1,10 @@
 # react-native-leaflet-map
 
+![NPM Version](https://img.shields.io/npm/v/react-native-leaflet-map)
+![NPM Downloads](https://img.shields.io/npm/dm/react-native-leaflet-map)
+![GitHub last commit](https://img.shields.io/github/last-commit/weishenho/react-native-leaflet-map)
+
+
 A React Native component that provides Leaflet MapView using the WebView
 
 ## Installation
