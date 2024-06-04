@@ -37,7 +37,13 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "leaflet",
+    "react-native-leaflet",
+    "rn-leaflet",
+    "marker clustering",
+    "leaflet marker clustering",
+    "typescript"
   ],
   "repository": {
     "type": "git",
