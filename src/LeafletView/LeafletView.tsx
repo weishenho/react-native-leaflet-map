@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Platform } from 'react-native';
-import isEqual from 'react-fast-compare';
 import WebView, { type WebViewMessageEvent } from 'react-native-webview';
 import type { LeafletMapProps, LeafletProps } from '../types';
 import { styles } from './LeafletView.styles';
@@ -8,7 +7,7 @@ import { LeafletWebViewEventTags } from '../constants';
 
 const leafletHTMLSource = Platform.select({
   ios: require('../html/Leaflet.html'),
-  android: { uri: 'file:///android_asset/Leaflet.html' },
+  android: require('../html/Leaflet.html'),
 });
 
 export const LeafletView = ({
@@ -52,6 +51,32 @@ export const LeafletView = ({
     },
     [onMessage]
   );
+
+  const isEqual = (value1: any, value2: any): boolean => {
+    if (value1 === value2) {
+      return true;
+    }
+
+    if (typeof value1 !== 'object' || value1 === null ||
+      typeof value2 !== 'object' || value2 === null) {
+      return false;
+    }
+
+    const keys1 = Object.keys(value1);
+    const keys2 = Object.keys(value2);
+
+    if (keys1.length !== keys2.length) {
+      return false;
+    }
+
+    for (const key of keys1) {
+      if (!keys2.includes(key) || !isEqual(value1[key], value2[key])) {
+        return false;
+      }
+    }
+
+    return true;
+  }
 
   useEffect(() => {
     if (!isWebviewReady) {
